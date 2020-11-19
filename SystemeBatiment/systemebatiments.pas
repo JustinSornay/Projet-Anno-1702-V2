@@ -119,7 +119,7 @@ TypeBatiment:NewTypeBatiment;
         writeln('Chapelle : 2');
         readln(TestBatimentSociaux);
      end
-     else if (TestTypeBatiment=3)then
+     else if (TestTypeBatiment=Industries)then
      Begin
             writeln('Qu''elles d''industriue voulez-vous construire');
             writeln('Cabane de pecheur : 1');
