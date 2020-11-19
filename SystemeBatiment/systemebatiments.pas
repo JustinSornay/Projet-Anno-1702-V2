@@ -105,6 +105,39 @@ TypeBatiment:NewTypeBatiment;
 
  Procedure ConstructionsBatiments(TypeBatiment:NewTypeBatiment);
  Begin
+ 
+ //  Même chose mais avec un CASE (J'ai pas testé si marche)
+//
+// 
+//    CASE TypeBatiment OF
+//      Maisons : 
+//      BEGIN
+//        writeln('Qu''elle Maison voulez-vous construire');
+//        writeln('Maisons pour les Colons : 1');
+//        writeln('Maisons pour les Citoyens : 2');
+//        readln(TestTypeBatiment);
+//      END;
+//
+//      Batimensociaux :
+//        BEGIN
+//          writeln('Qu''elle batiment sociaux voulez-vous construire');
+//          writeln('Centre-Ville : 1');
+//          writeln('Chapelle : 2');
+//          readln(TestBatimentSociaux);  
+//        END;
+//
+//      Industries :
+//        BEGIN
+//          writeln('Qu''elles d''industriue voulez-vous construire');
+//          writeln('Cabane de pecheur : 1');
+//          writeln('Cabane de bucheron : 2');
+//          writeln('Bergerie de mouton : 3');
+//          writeln('Atelier de tisserand : 4');
+//          readln(TestIndustrie);
+//          END;
+//      END;
+
+
      if (TypeBatiment=Maisons)then
      Begin
         writeln('Qu''elle Maison voulez-vous construire');
