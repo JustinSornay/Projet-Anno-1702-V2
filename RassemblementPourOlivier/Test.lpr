@@ -1,27 +1,32 @@
-//program Test;
+program Test;
 
-uses SystemeBatiments, ressources, GestionEcran, GestionErreur;
+uses SystemeBatiments, ressources, GestionEcran, GestionErreur, FonctionFinal;
 
 //type coordonnees = record
 //  x : integer;
 //  y : integer;
 //end;
 
-//var
-//  paraph : string;
-//  Coor : coordonnees;
+var
+  paraph : string;
+  Coor : coordonnees;
+
 begin
-  InisialisationVariable();
-  initRessources();
+  changerTailleConsole(150,50); // Taille console
+  InisialisationVariable(); //Initialise les variables dans les batiments
+  initRessources(); //Initialise les variable Dans les Ressources
+
+//  setLaines(40);
+//  InfoRessource(getValEntrepot());  //Affiche le cadre des ressources avec en parametre la capicité de stockage
+//  InfoBatiments();
+//  deplacerCurseurXY(1,1); // déplace le curseur dans le cadre
   //setGold(0);
-  writeln('vous avez : ',getGold(),' d''or');
-  writeln('vous avez : ',getBois(),' Bois');
-  writeln('vous avez : ',getOutils(),' Outils');
-//  paraph := 'Julien';
-//  Coor := 2;
-  readln();
-//  effacerEcran();
-//  ecrireEnPosition(Coor, paraph);
-  PTypeBatiment();
-  ConstructionsBatiments();
+
+  CreeBatiments();
+
+
+
+
+//  PTypeBatiment();
+//  ConstructionsBatiments();
 end.
