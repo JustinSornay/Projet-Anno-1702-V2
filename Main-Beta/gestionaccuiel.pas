@@ -79,14 +79,14 @@ Procedure StartGame();
   effacerEcran();//effacer l'ecran
   dessinerCadreXY(0,0,148,49, simple, 15, 0); //Cadre large
   PetitCadre();
-  deplacerCurseurXY(2, 2);  //Ecrire dans le cadre des batiments possédés
+  deplacerCurseurXY(40, 20);  //Ecrire dans le cadre des batiments possédés
   CurseurRess := positionCurseur();
   writeln('Entrer le nom de votre Personnage :');
-  CurseurRess.y := 2; CurseurRess.x :=38;
+  CurseurRess.y := 20; CurseurRess.x :=76;
   deplacerCurseur(CurseurRess); 
   read(valeur);
   setPseudo(valeur);
-  getPseudo();
+  //getPseudo();
   
  END;
 
