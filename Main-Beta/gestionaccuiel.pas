@@ -69,7 +69,7 @@ Procedure StartGame();
       CurseurRess.y := CurseurRess.y + 1;
       deplacerCurseur(CurseurRess);
       writeln('Le jeu va ce fermé dans 1s');
-      attendre(5000); 
+      attendre(1000); 
     end;
   END;
 
