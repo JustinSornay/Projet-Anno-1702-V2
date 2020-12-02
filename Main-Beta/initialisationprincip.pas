@@ -54,6 +54,19 @@ Procedure InisialisationVariableBat();
       //Cette procedure modifie la valeur de la variable nbEntrepot
       procedure setEntrepot(valeur : integer);
 
+      // ******************Colon et Citoyens****************************//
+
+      //Cette procedure modifie la valeur de la variable Colon
+       procedure setColons(valeur : integer);
+       //Cette fonction renvoie la valeur de la variable Colon
+        function getColons() : Integer;
+
+      //Cette procedure modifie la valeur de la variable Citoyens
+       procedure setCitoyens(valeur : integer);
+       //Cette fonction renvoie la valeur de la variable Citoyens
+        function getCitoyens() : Integer;
+
+
       //     Valeur Entrepot     //
 //Cette fonction renvoie la capacité de stockage
 FUNCTION getValEntrepot(): Integer;
@@ -73,6 +86,8 @@ var
   AtelierTissus: INTEGER;
   Bergerie: INTEGER;
   nbEntrepot : INTEGER;
+   Colons : INTEGER;
+   Citoyens : INTEGER;
 Procedure InisialisationVariableBat();
 Begin
 //inisialisations à 0 de nos variables
@@ -96,7 +111,46 @@ CabanePecheur:=0;
 
 //    Entrepot  //
 nbEntrepot := 0;
+
+//  Colons  //
+Colons := 0;
+
+//  Citoyens //
+Citoyens := 0;
+
 end;
+
+    //                   //
+  //      Colons       //
+//                   //
+
+//Cette procedure modifie la valeur de la variable Colon
+ procedure setColons(valeur : integer);
+ begin
+  Colons := valeur;
+ end;
+
+ //Cette fonction renvoie la valeur de la variable Colon
+  function getColons() : Integer;
+  begin
+   getColons:= Colons;
+  end;
+
+    //                   //
+  //      Citoyen      //
+//                   //
+
+//Cette procedure modifie la valeur de la variable Citoyens
+ procedure setCitoyens(valeur : integer);
+ begin
+  Citoyens := valeur;
+ end;
+
+ //Cette fonction renvoie la valeur de la variable Citoyens
+  function getCitoyens() : Integer;
+  begin
+   getCitoyens := Citoyens;
+  end;
 
     //                   //
   //  Maison Citoyens  //
