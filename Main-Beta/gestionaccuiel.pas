@@ -61,7 +61,7 @@ Procedure StartGame();
       CurseurRess.x:= CurseurRess.x+11;
       deplacerCurseur(CurseurRess);
       CreationPseudo();
-      CreeBatiments();//startbatiment//
+      GestionBatiments();//start main menu//
       
     end
     else
@@ -69,7 +69,7 @@ Procedure StartGame();
       CurseurRess.y := CurseurRess.y + 1;
       deplacerCurseur(CurseurRess);
       writeln('Le jeu va ce fermé dans 1s');
-      attendre(5000);
+      attendre(5000); 
     end;
   END;
 
