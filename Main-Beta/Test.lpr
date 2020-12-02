@@ -31,9 +31,9 @@ begin
         //CreeBatiments();    //Systeme de creation de batiment
 
 
-        GestionBatiments();
-        InfoJeuResBat();  //affiche les ressources et les Batiments
-        readln();
+       // GestionBatiments();
+        //InfoJeuResBat();  //affiche les ressources et les Batiments
+        //readln();
     //    WriteLn('Retour Reussi --> Ecran principal');
 
     //    setRetourBat(FALSE);  // modifie la valeur de retour a False
