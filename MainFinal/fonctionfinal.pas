@@ -60,9 +60,9 @@ var
          END;
 
      2 : BEGIN
-          WHILE getRetourBat() = FALSE DO BEGIN
-              DetruireBatiments();
-            IF getRetourBat() = FALSE THEN BEGIN
+          WHILE getRetourMarchand() = FALSE DO BEGIN
+              VendreRessources();
+            IF getRetourMarchand() = FALSE THEN BEGIN
               FinalAcheterOuVendre();
             END;
           END;
