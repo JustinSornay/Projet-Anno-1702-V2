@@ -3,13 +3,13 @@ unit SystemeTour;
 interface
 
 uses
-  Classes, SysUtils, initialisationPrincip, Ressources, GestionEcran,GestionMarchand, GestionErreur;
+  Classes, SysUtils, initialisationPrincip, Ressources, GestionEcran;
 
-// Information de l'ile
-procedure InfoTour();
+  // AFFICHE LE NOMBRE DE TOUR
+  procedure InfoTour();
 
-// INITIALISE LE NOMBRE DE TOUR
-procedure StartTour();
+// INITIALISE LE SYSTEME DE TOUR
+procedure StartTour(var difficulte:integer);
 
 // RECUPERER LE NUMERO DU TOUR ACTUEL
 function GetTour() : integer;
@@ -17,83 +17,46 @@ function GetTour() : integer;
 // PASSER AU TOUR SUIVANT
 procedure TourSuivant();
 
-// Procedure finale pour le marchand
-procedure MarchandFinal();
-
-// Procedure pour savoir si le joueur veux acheter ou vendre
-procedure FinalAcheterOuVendre();
-
 implementation
 var
   NumTour : integer;
-
-  // Procedure pour savoir si le joueur veux acheter ou vendre
-  procedure FinalAcheterOuVendre();
-  var
-    CurseurRess: coordonnees;
-    AcheterOuVendre : INTEGER;
-
-     BEGIN
-     effacerEcran();
-     MarchandFinal();
-
-     CurseurRess := positionCurseur();
-     writeln('Acheter : 1');
-     CurseurRess.y := CurseurRess.y + 1;
-     deplacerCurseur(CurseurRess);
-     writeln('Vendre : 2');
-     CurseurRess.y := CurseurRess.y + 1;
-     deplacerCurseur(CurseurRess);
-     writeln('Retour : 0');
-     CurseurRess.y := CurseurRess.y + 1;
-     deplacerCurseur(CurseurRess);
-     readln(AcheterOuVendre);
-
-     CASE AcheterOuVendre OF
-       1 : BEGIN
-            WHILE getRetourMarchand() = FALSE DO BEGIN
-                AcheterRessources();
-              IF getRetourMarchand() = FALSE THEN BEGIN
-                FinalAcheterOuVendre(); //Récursivité
-              END;
-            END;
-           END;
-
-       2 : BEGIN
-            WHILE getRetourMarchand() = FALSE DO BEGIN
-                VendreRessources();
-              IF getRetourMarchand() = FALSE THEN BEGIN
-                FinalAcheterOuVendre(); //Récursivité
-              END;
-            END;
-           END;
-
-       0 : BEGIN
-             setRetourMarchand(True);  // modifie la valeur de retourMarchand a True
-             CurseurRess.y := CurseurRess.y + 1;
-             deplacerCurseur(CurseurRess);
-             ReadLn();
-           END;
-     END;
-  END;
-
-  // Procedure finale pour le marchand
-  procedure MarchandFinal();
-  begin
-      Marchand();
-      // Créer le cadre Dialogue pour le marchand
-      CadreDialogueMarchand();
-
-      // Créer Une ligne dans le dialogue du marchand
-      LigneDialogueMarchand();
-  end;
+  
 
 // INITIALISE LE SYSTEME DE TOUR
-procedure StartTour();
+procedure StartTour(var difficulte:integer);  //Initialisation du nombre de tour a 0
+var test:integer;
   begin
     NumTour := 0;
-  end;
+    Case difficulte of      
+       0 :
+       BEGIN
+         setGold(1500);//modifie la valeur de l'or de départ
+         setBois(50);//modifie la valeur du boie de départ
+         setOutils(20);//modifie la valeur des outiuls de départs
+       END;
 
+       1 :
+       BEGIN
+         setGold(1000);//modifie la valeur de l'or de départ
+         setBois(40);//modifie la valeur du boie de départ
+         setOutils(15);//modifie la valeur des outiuls de départs;
+       END;
+
+       2 :
+       BEGIN
+         setGold(800);//modifie la valeur de l'or de départ
+         setBois(30);//modifie la valeur du boie de départ
+         setOutils(10);//modifie la valeur des outiuls de départs
+       END;
+      3 :
+      BEGIN
+      Randomize; //Initialisation du random
+      test:=random(3); //difficulté aléatoire
+       StartTour(test);
+       writeln('Vous achez choicie le mode N°', test); //affiche le mod de difficulté de la partie
+      END;
+  END;  
+end;
 // RECUPERER LE NUMERO DU TOUR ACTUEL
 function GetTour() : integer;
 begin
@@ -102,43 +65,48 @@ end;
 
 // PASSER AU TOUR SUIVANT
 procedure TourSuivant();
-var x : integer;
 begin
   NumTour := NumTour + 1;
 
-
-
-
   //*************************Consomation/Impots poissons**********************************//
 
-  setPoissons(GetPoissons() - (getColons()));  //Modifie la quantité de Poissons en fonction des Colons possédé
-  setGold(GetGold() + (getColons() * 2));  //Modifie la quantité d'Or en fonction des Colons possédé
+  setPoissons(GetPoissons() - (getColons() + getCitoyens()));  //Modifie la quantité de Poissons en fonction des Colons et des Citoyens possédé
+  setGold(GetGold() + (getColons()+getCitoyens()) * 2);  //Modifie la quantité d'Or en fonction des Colons possédé
 
 
 //************************Social************************************//
 
-   if getMaisonColon() > GetColons() then setColons(GetColons() + 1); //Modifie le nombre de colons en fonction des maisons de colons possédés
+   if getMaisonColon() > GetColons() then setColons(GetColons() + 1);
+
+   if getMaisonCitoyens() > GetCitoyens() then setCitoyens(GetCitoyens() + 1);
+
 
 //*************************Industries********************************************//
 
-
+  if getBois() < getValEntrepot() then  //si le joueur n'a pas déja la quantité maximal de bois
+    begin
         setBois(GetBois() + (getCabaneBucheron() * 1));   //Modifie la quantité de bois en fonction des cabane de bucheron possédé
+    end;
 
+  if getLaines() < getValEntrepot() then  //si le joueur n'a pas déja la quantité maximal de Laine
+    begin
         setLaines(getLaines() + (getBergerie() * 1)); //Modifie la quantité de laines en fonction des bergeries possédé
+    end;
 
-        setTissus(getTissus() + (getAtelierTissus() * 1)); //modifie la quantité de tissus en fonction des Ateliers de tissus
+  if getTissus() < getValEntrepot() then  //si le joueur n'a pas déja la quantité maximal de Tissus
+    begin
+        setTissus(getTissus() + (getAtelierTissus() * 1)) //modifie la quantité de tissus en fonction des Ateliers de tissus
+    end;
 
+  if getPoissons() < getValEntrepot() then  //si le joueur n'a pas déja la quantité maximal de Poissons
+    begin
         setPoissons(GetPoissons() + (GetCabanePecheur() * 2));  //Modifie la quantité de Poissons en fonction des cabane de Poissons possédé
+    end;
 
-
-    //Si le marchand apparait
-    x := Random(4);
-    if x = 1 then
-      FinalAcheterOuVendre();
+    //marchand
 
 end;
 
-// Information de l'ile
 procedure InfoTour();
 var CurseurRess: coordonnees;
 begin
