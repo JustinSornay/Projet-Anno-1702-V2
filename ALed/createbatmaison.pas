@@ -32,6 +32,8 @@ FUNCTION GetCoutOutilsMaisonCit():INTEGER;
 FUNCTION GetCoutColMaisonCit():INTEGER;
 
 
+
+
 implementation
 CONST
     //                      //
@@ -155,4 +157,6 @@ Var
   BEGIN
     GetCoutColMaisonCit := CoutColMaisonCit;
   END;
+
+
 end.

@@ -3,7 +3,7 @@ unit SystemeTour;
 interface
 
 uses
-  Classes, SysUtils, initialisationPrincip, Ressources;
+  Classes, SysUtils, initialisationPrincip, Ressources,GestionEcran;
 
 // INITIALISE LE SYSTEME DE TOUR
 procedure StartTour();
@@ -11,8 +11,13 @@ procedure StartTour();
 // RECUPERER LE NUMERO DU TOUR ACTUEL
 function GetTour() : integer;
 
+// AFFICHE LE NOMBRE DE TOUR
+
+procedure InfoTour();
+
 // PASSER AU TOUR SUIVANT
 procedure TourSuivant();
+
 
 implementation
 var
@@ -69,6 +74,31 @@ begin
     begin
         setPoissons(GetPoissons() + (GetCabanePecheur() * 2));  //Modifie la quantité de Poissons en fonction des cabane de Poissons possédé
     end;
+
+end;
+
+procedure InfoTour();
+var CurseurRess: coordonnees;
+begin
+   dessinerCadreXY(5,13,80,24, simple, 15, 0); //Cadre des tours
+
+  dessinerCadreXY(18,12,68,14, simple, 15, 0); //Cadre du mot 'Information'
+  deplacerCurseurXY(38, 13);  //Ecrire a l'intérieur de l'encadré
+  writeln('Informations');
+  deplacerCurseurXY(20, 17);  //Ecrire dans le cadre des Informations
+  CurseurRess := positionCurseur();
+
+  writeln('Nom de l''île            :           Kaitora');        // Afficher le nom de l'île
+  CurseurRess.y := CurseurRess.y + 1;
+  deplacerCurseur(CurseurRess);
+  writeln('Nombre de tours         :           ',GetTour());   // Affiche le nombre de tours
+  CurseurRess.y := CurseurRess.y + 1;
+  deplacerCurseur(CurseurRess);
+  writeln('Fertilités              :           houblon,tabac,blé');   // Affiche la fertilité de l'île
+  CurseurRess.y := CurseurRess.y + 1;
+  deplacerCurseur(CurseurRess);
+  writeln('Emplacement             :           83');   // Affiche l'emplacement de l'île
+
 
 end;
 

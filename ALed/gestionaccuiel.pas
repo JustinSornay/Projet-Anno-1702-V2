@@ -6,7 +6,7 @@ unit GestionAccuiel;
 interface
 
 uses
-  Classes, SysUtils,image,GestionEcran,fonctionfinal;
+  Classes, SysUtils,image,GestionEcran,fonctionfinal,Ressources,GestionErreur,SystemeTour,initialisationPrincip;
 
 //Procedure qui regroupe le start du jeu
 Procedure MainStart();
@@ -23,17 +23,27 @@ Procedure StartGame();
  //Cette procedure modifie la valeur de la variable Pseudo
  procedure setPseudo(valeur : string);
 
+ //Cette procedure affiche le nom du personnage
+ procedure affichePersonnage();
+
+ //Cette procedure affiche la boite de gestion de construction
+ procedure GestionDialogue();
+
+ //Cette procedure affiche l'écran d'interface
+  procedure InterfaceEcran();
+
+ 
 implementation
 var
      Pseudo:string;
 
-//Procedure qui gère la page
+//Procedure qui gère la page 
  Procedure MainStart();
  BEGIN
   PageAccueilSun();
   PageAccueilLogo();
   StartGame();
-
+  
  END;
 
 Procedure StartGame();
@@ -42,11 +52,11 @@ Procedure StartGame();
     TestStartGame:Integer;
 
   BEGIN
-
+    
     TestStartGame:=0;
     deplacerCurseurXY(52, 36);  //Ecrire dans le cadre des batiments possédés
     CurseurRess := positionCurseur();
-
+  
     writeln('Bienvenue sur KAITIORA voulez-vous jouer ?');
     CurseurRess.y := CurseurRess.y + 1;
     deplacerCurseur(CurseurRess);
@@ -61,15 +71,15 @@ Procedure StartGame();
       CurseurRess.x:= CurseurRess.x+11;
       deplacerCurseur(CurseurRess);
       CreationPseudo();
-      GestionBatiments();//startbatiment//
-
+      InterfaceEcran();//start main menu//
+      
     end
     else
     Begin
       CurseurRess.y := CurseurRess.y + 1;
       deplacerCurseur(CurseurRess);
       writeln('Le jeu va ce fermé dans 1s');
-      attendre(5000);
+      attendre(10);
     end;
   END;
 
@@ -79,18 +89,18 @@ Procedure StartGame();
   effacerEcran();//effacer l'ecran
   dessinerCadreXY(0,0,148,49, simple, 15, 0); //Cadre large
   PetitCadre();
-  deplacerCurseurXY(2, 2);  //Ecrire dans le cadre des batiments possédés
+  deplacerCurseurXY(40, 20);  //Ecrire dans le cadre des batiments possédés
   CurseurRess := positionCurseur();
   writeln('Entrer le nom de votre Personnage :');
-  CurseurRess.y := 2; CurseurRess.x :=38;
-  deplacerCurseur(CurseurRess);
+  CurseurRess.y := 20; CurseurRess.x :=76;
+  deplacerCurseur(CurseurRess); 
   read(valeur);
   setPseudo(valeur);
-  getPseudo();
-
+  //getPseudo();
+  
  END;
 
-
+ 
    //                        //
   //          Pseudo        //
  //                        //
@@ -107,4 +117,62 @@ Procedure StartGame();
      Pseudo := valeur;
  END;
 
+//Cette procedure affiche le nom ainsi que les gold de l'utilisateur
+ procedure affichePersonnage();
+ var CurseurRess:coordonnees;
+ begin
+  deplacerCurseurXY(5,2);
+  writeln('Nom du personnage :          ',getPseudo);
+   deplacerCurseurXY(5,3);
+  writeln('Nombre de gold    :         ',getGold);
+
+ end;
+
+//Cette procedure permet de dialoguer entre l'utilisateur et la console
+ procedure GestionDialogue();
+ var x:integer;
+   CurseurRess: coordonnees;
+ begin
+ dessinerCadreXY(5,35,80,40, simple, 15, 0); //Cadre de Gestion construction
+ dessinerCadreXY(18,34,66,36, simple, 15, 0); //Cadre du mot 'Gestion construction'
+ deplacerCurseurXY(35, 35);  //Ecrire a l'intérieur de l'encadré
+ writeln('Dialogue');
+ deplacerCurseurXY(20, 37);  //Ecrire dans le cadre du dialogue
+ CurseurRess := positionCurseur();
+ writeln('Construire : 1            Quitter le jeu : 2');
+ deplacerCurseurXY(30, 38);
+ writeln('Passer un tour : 3 ');
+ deplacerCurseurXY(30, 39);
+ readln(x);
+      case x of
+      1:GestionBatiments;
+      2:;
+      3:TourSuivant;
+      end;
+
+ end;
+
+//Cette procedure affiche l'écran d'interface
+ procedure InterfaceEcran();
+var x :integer;
+    retourAccueil:Boolean;
+begin
+retourAccueil:=false;
+WHILE retourAccueil = false do
+  begin
+       dessinerCadreXY(0,0,148,49, simple, 15, 0);
+       InfoJeuResBat();
+       affichagePopulation; // affiche le cadre de la population
+       infoTour;         // affiche le cadre des informations comme les tours
+       affichePersonnage; //affiche le nom du personnage ainsi que les golds
+       ImgPlage();        // créer l'image de la plage
+       GestionDialogue();// affiche le cadre gestion de construction
+       InterfaceEcran();
+  end;
+
+end;
+
+
+
 end.
+

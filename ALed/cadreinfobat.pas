@@ -13,6 +13,7 @@ uses
   //Affiche le Cout des batiments
   procedure InfoCoutBatiments();
 
+
 implementation
 
 //Affiche le nombre de batiments possédés
@@ -96,5 +97,6 @@ var
    deplacerCurseur(CurseurRess);
    writeln('Centre-Ville            : ',GetCoutBoisCentreVille,' Bois, ',GetCoutOutilsCentreVille,' Outils, ',GetCoutOrCentreVille,' Or');   // Affiche le Cout d'un CentreVille
  END;
+
 
 end.

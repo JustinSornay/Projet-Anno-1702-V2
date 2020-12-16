@@ -5,7 +5,7 @@ unit initialisationPrincip;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils,GestionEcran;
 
 Procedure InisialisationVariableBat();
 
@@ -65,6 +65,9 @@ Procedure InisialisationVariableBat();
        procedure setCitoyens(valeur : integer);
        //Cette fonction renvoie la valeur de la variable Citoyens
         function getCitoyens() : Integer;
+        //Cette procedure affiche le cadre de la population
+        procedure affichagePopulation();
+
 
 
       //     Valeur Entrepot     //
@@ -72,25 +75,6 @@ Procedure InisialisationVariableBat();
 FUNCTION getValEntrepot(): Integer;
 //Cette procedure modifie la valeur de la variable ValEntrepot
 procedure setValEntrepot(valeur : integer);
-
-
-// ******************Marchand****************************//
-
- //Cette fonction renvoie le cout du bois du marchand
-  function MarchandCoutBois() : Integer;
-
-//Cette fonction renvoie le cout du poissons du marchand
- function MarchandCoutpoissons() : Integer;
-
-//Cette fonction renvoie le cout du Outils du marchand
- function MarchandCoutOutils() : Integer;
-
-//Cette fonction renvoie le cout du Laine du marchand
-  function MarchandCoutLaine() : Integer;
-
-//Cette fonction renvoie le cout du Tissus du marchand
-  function MarchandCoutTissus() : Integer;
-
 
 implementation
 
@@ -107,31 +91,9 @@ var
   nbEntrepot : INTEGER;
    Colons : INTEGER;
    Citoyens : INTEGER;
-
-   MCoutBois : INTEGER;
-   MCoutpoissons : INTEGER;
-   MCoutLaines : INTEGER;
-   MCoutTissus : INTEGER;
-   MCoutOutils : INTEGER;
 Procedure InisialisationVariableBat();
 Begin
 //inisialisations à 0 de nos variables
-//  Cout bois marchand   //
-MCoutBois := 5;
-
-//  Cout poissons marchand   //
-MCoutpoissons := 3;
-
-//  Cout Laines marchand   //
-MCoutLaines := 8;
-
-//  Cout Tissus marchand   //
-MCoutTissus := 8;
-
-//  Cout Outils marchand   //
-MCoutOutils := 15;
-
-
 //     ValEntrepot    //
 ValEntrepot := 40;
 
@@ -160,39 +122,6 @@ Colons := 0;
 Citoyens := 0;
 
 end;
-    //               //
-  //    Marchand   //
-//               //
-
-//Cette fonction renvoie le cout du bois du marchand
- function MarchandCoutBois() : Integer;
- begin
-   MarchandCoutBois := MCoutBois;
- end;
-
- //Cette fonction renvoie le cout du poissons du marchand
-  function MarchandCoutpoissons() : Integer;
-  begin
-    MarchandCoutpoissons := MCoutpoissons;
-  end;
-
- //Cette fonction renvoie le cout du Outils du marchand
-  function MarchandCoutOutils() : Integer;
-  begin
-    MarchandCoutOutils := MCoutOutils;
-  end;
-
- //Cette fonction renvoie le cout du Laine du marchand
-   function MarchandCoutLaine() : Integer;
-   begin
-     MarchandCoutLaine := MCoutLaines;
-   end;
-
- //Cette fonction renvoie le cout du Tissus du marchand
-   function MarchandCoutTissus() : Integer;
-   begin
-     MarchandCoutTissus := MCoutTissus;
-   end;
 
     //                   //
   //      Colons       //
@@ -380,5 +309,25 @@ procedure setEntrepot(valeur : integer);
  begin
      ValEntrepot:= valeur;
  end;
+
+ //Procedure qui affiche le cadre de la population
+procedure affichagePopulation();
+var CurseurRess:coordonnees;
+begin
+ dessinerCadreXY(5,27,80,32, simple, 15, 0); //Cadre de la population
+ dessinerCadreXY(18,26,66,28, simple, 15, 0); //Cadre du mot 'Population'
+ deplacerCurseurXY(38, 27);  //Ecrire a l'intérieur de l'encadré
+ writeln('Population');
+ deplacerCurseurXY(20, 29);  //Ecrire dans le cadre des Informations
+ CurseurRess := positionCurseur();
+ writeln('Nombre de colons           :           ',getColons);        // Affiche le nombre de colons
+  CurseurRess.y := CurseurRess.y + 1;
+  deplacerCurseur(CurseurRess);
+  writeln('Nombre de citoyens         :           ',getCitoyens);   // Affiche le nombre de citoyens
+
+
+end;
+
+
 
 end.

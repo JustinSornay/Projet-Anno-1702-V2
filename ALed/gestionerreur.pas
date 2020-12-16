@@ -15,38 +15,7 @@ function ComparRess(valeurUser : integer; valeur2 : integer) : BOOLEAN;
   // Créer Une ligne dans dialogue
     Procedure LigneDialogue();
 
-    // Créer le cadre Dialogue pour le marchand
-      Procedure CadreDialogueMarchand();
-
-    // Créer Une ligne dans le dialogue du marchand
-      Procedure LigneDialogueMarchand();
-
 implementation
-
-// Créer le cadre Dialogue pour le marchand
-  Procedure CadreDialogueMarchand();
-  begin
-  dessinerCadreXY(4,13,80,40, simple, 15, 0); //Cadre dialogue Marchand
-  dessinerCadreXY(29,12,55,14, simple, 15, 0); //Cadre du mot Dialogue
-  deplacerCurseurXY(38, 13);  //Ecrire a l'intérieur de l'encadré
-  writeln('Dialogue');
-
-  deplacerCurseurXY(7, 15);  //Ecrire dans le cadre dialogue marchnad
-  end;
-
-// Créer Une ligne dans le dialogue du marchand
-  Procedure LigneDialogueMarchand();
-  VAR
-    CurseurDebut: coordonnees;
-  BEGIN
-    CurseurDebut := positionCurseur();
-    CurseurDebut.y := CurseurDebut.y + 1;
-    deplacerCurseur(CurseurDebut);
-    writeln('              ──────────────────────────────────────────────');
-      //dessinerCadre(CurseurDebut, CurseurFin, simple, 15, 0);
-    CurseurDebut.y := CurseurDebut.y + 1;
-    deplacerCurseur(CurseurDebut);
-  END;
 
 // Créer Une ligne dans dialogue
   Procedure LigneDialogue();
@@ -85,6 +54,6 @@ var
      deplacerCurseurXY(38, 2);  //Ecrire a l'intérieur de l'encadré
      writeln('Dialogue');
 
-     deplacerCurseurXY(7, 4);  //Ecrire dans le cadre dialogue
+     deplacerCurseurXY(7, 4);  //Ecrire dans le cadre des Ressource
      end;
 end.

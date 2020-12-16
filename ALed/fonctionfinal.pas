@@ -5,7 +5,7 @@ unit FonctionFinal;
 interface
 
 uses
-  Classes, SysUtils, SystemeBatiments, ressources, GestionEcran, GestionErreur, Image, CadreInfoBat, GestionMarchand;
+  Classes, SysUtils, SystemeBatiments, ressources, GestionEcran, GestionErreur, Image, CadreInfoBat;
 
   // Procedure finale pour Gérer un batiments
   procedure GestionBatiments();
@@ -19,77 +19,8 @@ procedure DetruireBatiments();
 // Procedure affiche les ressources et les Batiments
 PROCEDURE InfoJeuResBat();
 
-// Procedure finale pour le marchand
-procedure MarchandFinal();
-
-// Procedure pour savoir si acheter ou vendre
-procedure FinalAcheterOuVendre();
 
 implementation
-
-// Procedure pour savoir si acheter ou vendre
-procedure FinalAcheterOuVendre();                             //A FINIR FAIRE LA MEME CHOSE QUE POUR LES BATIMENTS DANS SYSTEMEBATIMENT
-
-var
-  CurseurRess: coordonnees;
-  AcheterOuVendre : INTEGER;
-   BEGIN
-   effacerEcran();
-   MarchandFinal();
-
-   CurseurRess := positionCurseur();
-   writeln('Acheter : 1');
-   CurseurRess.y := CurseurRess.y + 1;
-   deplacerCurseur(CurseurRess);
-   writeln('Vendre : 2');
-   CurseurRess.y := CurseurRess.y + 1;
-   deplacerCurseur(CurseurRess);
-   writeln('Retour : 0');
-   CurseurRess.y := CurseurRess.y + 1;
-   deplacerCurseur(CurseurRess);
-   readln(AcheterOuVendre);
-
-   CASE AcheterOuVendre OF
-     1 : BEGIN
-          WHILE getRetourMarchand() = FALSE DO BEGIN
-              AcheterRessources();
-            IF getRetourMarchand() = FALSE THEN BEGIN
-              FinalAcheterOuVendre();
-            END;
-          END;
-         END;
-
-     2 : BEGIN
-          WHILE getRetourMarchand() = FALSE DO BEGIN
-              VendreRessources();
-            IF getRetourMarchand() = FALSE THEN BEGIN
-              FinalAcheterOuVendre();
-            END;
-          END;
-         END;
-
-     0 : BEGIN
-           setRetourMarchand(True);  // modifie la valeur de retour a True
-           CurseurRess.y := CurseurRess.y + 1;
-           deplacerCurseur(CurseurRess);
-           WriteLn('Retour accueil');
-           CurseurRess.y := CurseurRess.y + 1;
-           deplacerCurseur(CurseurRess);
-           ReadLn();
-         END;
-   END;
-END;
-
-// Procedure finale pour le marchand
-procedure MarchandFinal();
-begin
-    Marchand();
-    // Créer le cadre Dialogue pour le marchand
-    CadreDialogueMarchand();
-
-    // Créer Une ligne dans le dialogue du marchand
-    LigneDialogueMarchand();
-end;
 
 // Procedure affiche les ressources et les Batiments
 PROCEDURE InfoJeuResBat();
@@ -144,13 +75,10 @@ var
          END;
 
      0 : BEGIN
-           setRetourBat(True);  // modifie la valeur de retour a True
+           setRetourBat(True);  // modifie la valeur de retour a False
            CurseurRess.y := CurseurRess.y + 1;
            deplacerCurseur(CurseurRess);
-           WriteLn('Retour accueil');
-           CurseurRess.y := CurseurRess.y + 1;
-           deplacerCurseur(CurseurRess);
-           ReadLn();
+
          END;
    END;
 END;
