@@ -97,7 +97,7 @@ Procedure StartGame();
   deplacerCurseurXY(40, 40);  //Ecrire dans le cadre des batiments possédés
   CurseurRess := positionCurseur();
   writeln('Entrer le nom de votre Personnage :');
-  CurseurRess.y := 40; CurseurRess.x :=76;
+  CurseurRess.y := 20; CurseurRess.x :=76;
   deplacerCurseur(CurseurRess);
   read(valeur);
   setPseudo(valeur);

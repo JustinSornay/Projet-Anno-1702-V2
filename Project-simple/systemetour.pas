@@ -3,7 +3,7 @@ unit SystemeTour;
 interface
 
 uses
-  Classes, SysUtils, initialisationPrincip, Ressources, GestionEcran;
+  Classes, SysUtils, initialisationPrincip, Ressources, GestionEcran,GestionMarchand, GestionErreur;
 
   // AFFICHE LE NOMBRE DE TOUR
   procedure InfoTour();
@@ -17,9 +17,76 @@ function GetTour() : integer;
 // PASSER AU TOUR SUIVANT
 procedure TourSuivant();
 
+// Procedure finale pour le marchand
+procedure MarchandFinal();
+
+// Procedure pour savoir si acheter ou vendre
+procedure FinalAcheterOuVendre();
+
 implementation
 var
   NumTour : integer;
+
+  // Procedure pour savoir si acheter ou vendre
+  procedure FinalAcheterOuVendre();                             //A FINIR FAIRE LA MEME CHOSE QUE POUR LES BATIMENTS DANS SYSTEMEBATIMENT
+
+  var
+    CurseurRess: coordonnees;
+    AcheterOuVendre : INTEGER;
+     BEGIN
+     effacerEcran();
+     MarchandFinal();
+
+     CurseurRess := positionCurseur();
+     writeln('Acheter : 1');
+     CurseurRess.y := CurseurRess.y + 1;
+     deplacerCurseur(CurseurRess);
+     writeln('Vendre : 2');
+     CurseurRess.y := CurseurRess.y + 1;
+     deplacerCurseur(CurseurRess);
+     writeln('Retour : 0');
+     CurseurRess.y := CurseurRess.y + 1;
+     deplacerCurseur(CurseurRess);
+     readln(AcheterOuVendre);
+
+     CASE AcheterOuVendre OF
+       1 : BEGIN
+            WHILE getRetourMarchand() = FALSE DO BEGIN
+                AcheterRessources();
+              IF getRetourMarchand() = FALSE THEN BEGIN
+                FinalAcheterOuVendre();
+              END;
+            END;
+           END;
+
+       2 : BEGIN
+            WHILE getRetourMarchand() = FALSE DO BEGIN
+                VendreRessources();
+              IF getRetourMarchand() = FALSE THEN BEGIN
+                FinalAcheterOuVendre();
+              END;
+            END;
+           END;
+
+       0 : BEGIN
+             setRetourMarchand(True);  // modifie la valeur de retour a True
+             CurseurRess.y := CurseurRess.y + 1;
+             deplacerCurseur(CurseurRess);
+             ReadLn();
+           END;
+     END;
+  END;
+
+  // Procedure finale pour le marchand
+  procedure MarchandFinal();
+  begin
+      Marchand();
+      // Créer le cadre Dialogue pour le marchand
+      CadreDialogueMarchand();
+
+      // Créer Une ligne dans le dialogue du marchand
+      LigneDialogueMarchand();
+  end;
 
 // INITIALISE LE SYSTEME DE TOUR
 procedure StartTour();  //Initialisation du nombre de tour a 0
@@ -35,8 +102,12 @@ end;
 
 // PASSER AU TOUR SUIVANT
 procedure TourSuivant();
+var x : integer;
 begin
   NumTour := NumTour + 1;
+  x := Random(4);
+
+
 
   //*************************Consomation/Impots poissons**********************************//
 
@@ -74,8 +145,14 @@ begin
     end;
 
     //marchand
+    if x = 1 then
+      FinalAcheterOuVendre();
 
 end;
+
+
+
+
 
 procedure InfoTour();
 var CurseurRess: coordonnees;
