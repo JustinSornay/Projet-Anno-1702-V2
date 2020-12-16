@@ -73,6 +73,8 @@ begin
         setPoissons(GetPoissons() + (GetCabanePecheur() * 2));  //Modifie la quantité de Poissons en fonction des cabane de Poissons possédé
     end;
 
+    //marchand
+
 end;
 
 procedure InfoTour();

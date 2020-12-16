@@ -6,7 +6,7 @@ unit GestionAccuiel;
 interface
 
 uses
-  Classes, SysUtils,image,GestionEcran,fonctionfinal,Ressources,GestionErreur,SystemeTour,initialisationPrincip;
+  Classes, SysUtils,image,GestionEcran,fonctionfinal,Ressources,GestionErreur,SystemeTour,initialisationPrincip,systemeBatiments;
 
 //Procedure qui regroupe le start du jeu
 Procedure MainStart();
@@ -151,9 +151,12 @@ Procedure StartGame();
   deplacerCurseurXY(30, 39);
   readln(x);
        case x of
-       1:GestionBatiments;
+       1: begin
+            GestionBatiments();
+            setRetourBat(FALSE);
+          end;
        2:setRetourAccueil(true);
-       3:TourSuivant;
+       3:TourSuivant();
        end;
 
   end;
