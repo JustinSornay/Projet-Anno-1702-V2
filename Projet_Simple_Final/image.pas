@@ -81,7 +81,8 @@ implementation
   END;
 
   Procedure PetitCadre();
-  var CurseurRess:coordonnees;
+    var
+    CurseurRess : coordonnees;
   BEGIN
     dessinerCadreXY(50,0,100,4, simple, 15, 0); //Cadre large
     deplacerCurseurXY(65, 2);  //Ecrire dans le cadre des batiments possédés

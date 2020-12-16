@@ -6,7 +6,7 @@ unit GestionAccuiel;
 interface
 
 uses
-  Classes, SysUtils,image,GestionEcran,fonctionfinal,Ressources,GestionErreur,SystemeTour,initialisationPrincip,systemeBatiments;
+  Classes, SysUtils,image,GestionEcran,fonctionfinal,Ressources,SystemeTour,initialisationPrincip,systemeBatiments;
 
 //Procedure qui regroupe le start du jeu
 Procedure MainStart();
@@ -44,6 +44,7 @@ var
  Procedure MainStart();
  BEGIN
   setRetourAccueil(false);
+  StartTour();  //Initialisation du nombre de tour a 0
   StartGame();
 
 
@@ -76,13 +77,6 @@ Procedure StartGame();
       CreationPseudo();
       InterfaceEcran();//start main menu
 
-    end
-    else
-    Begin
-      CurseurRess.y := CurseurRess.y + 1;
-      deplacerCurseur(CurseurRess);
-      writeln('Le jeu va ce fermé dans 1s');
-      attendre(5000);
     end;
   END;
 
@@ -122,7 +116,6 @@ Procedure StartGame();
 
  //Cette procedure affiche le nom ainsi que les gold de l'utilisateur
   procedure affichePersonnage();
-  var CurseurRess:coordonnees;
   begin
    deplacerCurseurXY(5,2);
    writeln('Nom du personnage :          ',getPseudo());
@@ -134,7 +127,7 @@ Procedure StartGame();
  //Cette procedure permet de dialoguer entre l'utilisateur et la console
   procedure GestionDialogue();
   var x:integer;
-    CurseurRess: coordonnees;
+    CurseurRess : coordonnees;
   begin
   dessinerCadreXY(5,35,80,40, simple, 15, 0); //Cadre de Gestion construction
   dessinerCadreXY(18,34,66,36, simple, 15, 0); //Cadre du mot 'Gestion construction'
@@ -160,10 +153,7 @@ Procedure StartGame();
 
  //Cette procedure affiche l'écran d'interface
   procedure InterfaceEcran();
- var x :integer;
-     //retourAccueil:Boolean;
  begin
- //retourAccueil:=false;
  WHILE (getRetourAccueil() = false) do
    begin
         dessinerCadreXY(0,0,148,49, simple, 15, 0);

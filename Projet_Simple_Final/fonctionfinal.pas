@@ -5,7 +5,7 @@ unit FonctionFinal;
 interface
 
 uses
-  Classes, SysUtils, SystemeBatiments, ressources, GestionEcran, GestionErreur, Image, CadreInfoBat, GestionMarchand;
+  Classes, SysUtils, SystemeBatiments, ressources, GestionEcran, GestionErreur, Image, CadreInfoBat;
 
   // Procedure finale pour Gérer un batiments
   procedure GestionBatiments();

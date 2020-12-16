@@ -5,10 +5,10 @@ interface
 uses
   Classes, SysUtils, initialisationPrincip, Ressources, GestionEcran,GestionMarchand, GestionErreur;
 
-  // AFFICHE LE NOMBRE DE TOUR
-  procedure InfoTour();
+// Information de l'ile
+procedure InfoTour();
 
-// INITIALISE LE SYSTEME DE TOUR
+// INITIALISE LE NOMBRE DE TOUR
 procedure StartTour();
 
 // RECUPERER LE NUMERO DU TOUR ACTUEL
@@ -20,19 +20,19 @@ procedure TourSuivant();
 // Procedure finale pour le marchand
 procedure MarchandFinal();
 
-// Procedure pour savoir si acheter ou vendre
+// Procedure pour savoir si le joueur veux acheter ou vendre
 procedure FinalAcheterOuVendre();
 
 implementation
 var
   NumTour : integer;
 
-  // Procedure pour savoir si acheter ou vendre
-  procedure FinalAcheterOuVendre();                             //A FINIR FAIRE LA MEME CHOSE QUE POUR LES BATIMENTS DANS SYSTEMEBATIMENT
-
+  // Procedure pour savoir si le joueur veux acheter ou vendre
+  procedure FinalAcheterOuVendre();
   var
     CurseurRess: coordonnees;
     AcheterOuVendre : INTEGER;
+
      BEGIN
      effacerEcran();
      MarchandFinal();
@@ -54,7 +54,7 @@ var
             WHILE getRetourMarchand() = FALSE DO BEGIN
                 AcheterRessources();
               IF getRetourMarchand() = FALSE THEN BEGIN
-                FinalAcheterOuVendre();
+                FinalAcheterOuVendre(); //Récursivité
               END;
             END;
            END;
@@ -63,13 +63,13 @@ var
             WHILE getRetourMarchand() = FALSE DO BEGIN
                 VendreRessources();
               IF getRetourMarchand() = FALSE THEN BEGIN
-                FinalAcheterOuVendre();
+                FinalAcheterOuVendre(); //Récursivité
               END;
             END;
            END;
 
        0 : BEGIN
-             setRetourMarchand(True);  // modifie la valeur de retour a True
+             setRetourMarchand(True);  // modifie la valeur de retourMarchand a True
              CurseurRess.y := CurseurRess.y + 1;
              deplacerCurseur(CurseurRess);
              ReadLn();
@@ -89,7 +89,7 @@ var
   end;
 
 // INITIALISE LE SYSTEME DE TOUR
-procedure StartTour();  //Initialisation du nombre de tour a 0
+procedure StartTour();
   begin
     NumTour := 0;
   end;
@@ -105,7 +105,7 @@ procedure TourSuivant();
 var x : integer;
 begin
   NumTour := NumTour + 1;
-  x := Random(4);
+
 
 
 
@@ -117,7 +117,7 @@ begin
 
 //************************Social************************************//
 
-   if getMaisonColon() > GetColons() then setColons(GetColons() + 1);
+   if getMaisonColon() > GetColons() then setColons(GetColons() + 1); //Modifie le nombre de colons en fonction des maisons de colons possédés
 
 //*************************Industries********************************************//
 
@@ -131,12 +131,14 @@ begin
         setPoissons(GetPoissons() + (GetCabanePecheur() * 2));  //Modifie la quantité de Poissons en fonction des cabane de Poissons possédé
 
 
-    //marchand
+    //Si le marchand apparait
+    x := Random(4);
     if x = 1 then
       FinalAcheterOuVendre();
 
 end;
 
+// Information de l'ile
 procedure InfoTour();
 var CurseurRess: coordonnees;
 begin

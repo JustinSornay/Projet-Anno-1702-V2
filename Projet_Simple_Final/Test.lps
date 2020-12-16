@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="26">
+      <Unit0>
+        <Filename Value="Test.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="86"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="gestionerreur.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GestionErreur"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="49"/>
+        <CursorPos X="4" Y="89"/>
+        <UsageCount Value="86"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="mainaffichage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MainAffichage"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="77" Y="7"/>
+        <UsageCount Value="77"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="fonctionfinal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FonctionFinal"/>
+        <EditorIndex Value="18"/>
+        <CursorPos X="100" Y="8"/>
+        <UsageCount Value="75"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="image.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Image"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="49"/>
+        <CursorPos X="31" Y="85"/>
+        <UsageCount Value="69"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="createbatmaison.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatMaison"/>
+        <EditorIndex Value="12"/>
+        <UsageCount Value="63"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="initialisationprincip.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="initialisationPrincip"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="63"/>
+        <CursorPos X="12" Y="80"/>
+        <UsageCount Value="62"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="cadreinfobat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CadreInfoBat"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="42"/>
+        <CursorPos X="48" Y="52"/>
+        <UsageCount Value="62"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="createbatsociaux.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatSociaux"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="44"/>
+        <CursorPos X="47" Y="51"/>
+        <UsageCount Value="61"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="createbatindustries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatIndustries"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="64"/>
+        <CursorPos X="65" Y="14"/>
+        <UsageCount Value="60"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="systemetour.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SystemeTour"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="111"/>
+        <CursorPos X="59" Y="129"/>
+        <UsageCount Value="52"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="destructbatmaison.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DestructBatMaison"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="9"/>
+        <CursorPos X="7" Y="48"/>
+        <UsageCount Value="49"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="destructbatsociaux.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="17"/>
+        <CursorPos X="43" Y="19"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="destructbatindustries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DestructBatIndustries"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="110"/>
+        <CursorPos X="9" Y="149"/>
+        <UsageCount Value="46"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="gestionmarchand.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GestionMarchand"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="235"/>
+        <CursorPos X="10" Y="252"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="marchand.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="19"/>
+        <UsageCount Value="43"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="achatventemarchand.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AchatVenteMarchand"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="124"/>
+        <CursorPos X="59" Y="145"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="systemebatiments.pas"/>
+        <UnitName Value="SystemeBatiments"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="308"/>
+        <CursorPos Y="329"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="ressources.pas"/>
+        <UnitName Value="Ressources"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="69" Y="17"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\GestionEcran.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos X="40" Y="29"/>
+        <UsageCount Value="7"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\LucasHelp\Page Menu\Menu.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="23" Y="19"/>
+        <UsageCount Value="7"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\LucasHelp\Page Menu\menuconnexion.pas"/>
+        <UnitName Value="MenuConnexion"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="168"/>
+        <CursorPos X="143" Y="185"/>
+        <UsageCount Value="7"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\..\LucasHelp\Page Menu\unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="GestionEcran.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="22"/>
+        <CursorPos X="59" Y="26"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\Users\julie\AppData\Local\Temp\listechaine.pas"/>
+        <UnitName Value="Exo1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="7"/>
+        <UsageCount Value="9"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="gestionaccuiel.pas"/>
+        <UnitName Value="GestionAccuiel"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="122"/>
+        <CursorPos X="4" Y="136"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit25>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="Test.lpr"/>
+        <Caret Line="40" TopLine="17"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Test.lpr"/>
+        <Caret Line="58" TopLine="17"/>
+      </Position2>
+      <Position3>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="150" TopLine="129"/>
+      </Position3>
+      <Position4>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="151" TopLine="129"/>
+      </Position4>
+      <Position5>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="152" TopLine="129"/>
+      </Position5>
+      <Position6>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="153" TopLine="129"/>
+      </Position6>
+      <Position7>
+        <Filename Value="fonctionfinal.pas"/>
+        <Caret Line="187" Column="3" TopLine="82"/>
+      </Position7>
+      <Position8>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="150" TopLine="129"/>
+      </Position8>
+      <Position9>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="151" TopLine="129"/>
+      </Position9>
+      <Position10>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="156" Column="33" TopLine="129"/>
+      </Position10>
+      <Position11>
+        <Filename Value="systemetour.pas"/>
+        <Caret Line="37"/>
+      </Position11>
+      <Position12>
+        <Filename Value="fonctionfinal.pas"/>
+        <Caret Line="186" Column="22" TopLine="148"/>
+      </Position12>
+      <Position13>
+        <Filename Value="systemetour.pas"/>
+        <Caret Line="41" Column="8" TopLine="20"/>
+      </Position13>
+      <Position14>
+        <Filename Value="systemetour.pas"/>
+        <Caret Line="82" Column="7" TopLine="41"/>
+      </Position14>
+      <Position15>
+        <Filename Value="systemetour.pas"/>
+        <Caret Line="26" Column="4" TopLine="5"/>
+      </Position15>
+      <Position16>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="20" Column="135"/>
+      </Position16>
+      <Position17>
+        <Filename Value="destructbatmaison.pas"/>
+        <Caret Line="47" Column="11" TopLine="8"/>
+      </Position17>
+      <Position18>
+        <Filename Value="destructbatmaison.pas"/>
+        <Caret Line="48" Column="7" TopLine="9"/>
+      </Position18>
+      <Position19>
+        <Filename Value="systemetour.pas"/>
+        <Caret Line="115" Column="23" TopLine="94"/>
+      </Position19>
+      <Position20>
+        <Filename Value="ressources.pas"/>
+        <Caret Line="17" Column="69"/>
+      </Position20>
+      <Position21>
+        <Filename Value="destructbatindustries.pas"/>
+        <Caret Line="149" Column="9" TopLine="110"/>
+      </Position21>
+      <Position22>
+        <Filename Value="achatventemarchand.pas"/>
+        <Caret Line="145" Column="59" TopLine="124"/>
+      </Position22>
+      <Position23>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="20" Column="135"/>
+      </Position23>
+      <Position24>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="9" Column="64"/>
+      </Position24>
+      <Position25>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="163" Column="7" TopLine="142"/>
+      </Position25>
+      <Position26>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="137" TopLine="116"/>
+      </Position26>
+      <Position27>
+        <Filename Value="gestionaccuiel.pas"/>
+        <Caret Line="124" Column="33" TopLine="104"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fonctionfinal.pas"/>
+        <Caret Line="8" Column="100"/>
+      </Position28>
+      <Position29>
+        <Filename Value="image.pas"/>
+        <Caret Line="83" Column="26" TopLine="49"/>
+      </Position29>
+      <Position30>
+        <Filename Value="image.pas"/>
+        <Caret Line="85" Column="31" TopLine="49"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
