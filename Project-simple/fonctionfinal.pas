@@ -147,7 +147,6 @@ var
            setRetourBat(True);  // modifie la valeur de retour a True
            CurseurRess.y := CurseurRess.y + 1;
            deplacerCurseur(CurseurRess);
-           ReadLn();
          END;
    END;
 END;
