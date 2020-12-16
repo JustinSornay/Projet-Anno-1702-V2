@@ -32,7 +32,7 @@ procedure FinalAcheterOuVendre();                             //A FINIR FAIRE LA
 
 var
   CurseurRess: coordonnees;
-  CreeOuDetruire : INTEGER;
+  AcheterOuVendre : INTEGER;
    BEGIN
    effacerEcran();
    MarchandFinal();
@@ -47,14 +47,14 @@ var
    writeln('Retour : 0');
    CurseurRess.y := CurseurRess.y + 1;
    deplacerCurseur(CurseurRess);
-   readln(CreeOuDetruire);
+   readln(AcheterOuVendre);
 
-   CASE CreeOuDetruire OF
+   CASE AcheterOuVendre OF
      1 : BEGIN
-          WHILE getRetourBat() = FALSE DO BEGIN
-              CreeBatiments();
-            IF getRetourBat() = FALSE THEN BEGIN
-              GestionBatiments();
+          WHILE getRetourMarchand() = FALSE DO BEGIN
+              AcheterRessources();
+            IF getRetourMarchand() = FALSE THEN BEGIN
+              FinalAcheterOuVendre();
             END;
           END;
          END;
@@ -63,13 +63,13 @@ var
           WHILE getRetourBat() = FALSE DO BEGIN
               DetruireBatiments();
             IF getRetourBat() = FALSE THEN BEGIN
-              GestionBatiments();
+              FinalAcheterOuVendre();
             END;
           END;
          END;
 
      0 : BEGIN
-           setRetourBat(True);  // modifie la valeur de retour a False
+           setRetourMarchand(True);  // modifie la valeur de retour a True
            CurseurRess.y := CurseurRess.y + 1;
            deplacerCurseur(CurseurRess);
            WriteLn('Retour accueil');
@@ -144,7 +144,7 @@ var
          END;
 
      0 : BEGIN
-           setRetourBat(True);  // modifie la valeur de retour a False
+           setRetourBat(True);  // modifie la valeur de retour a True
            CurseurRess.y := CurseurRess.y + 1;
            deplacerCurseur(CurseurRess);
            WriteLn('Retour accueil');

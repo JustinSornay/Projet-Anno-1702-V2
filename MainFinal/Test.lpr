@@ -3,7 +3,7 @@ program Test;
 uses SystemeBatiments, ressources, GestionEcran, GestionErreur, FonctionFinal,
   Image, CreateBatMaison, initialisationPrincip, CadreInfoBat, CreateBatSociaux,
   CreateBatIndustries, SystemeTour, DestructBatMaison, destructbatsociaux,
-  destructBatIndustries, GestionAccuiel, GestionMarchand;
+  destructBatIndustries, GestionAccuiel, gestionmarchand, AchatVenteMarchand;
 
 //type coordonnees = record
 //  x : integer;
@@ -15,13 +15,14 @@ uses SystemeBatiments, ressources, GestionEcran, GestionErreur, FonctionFinal,
   //Coor : coordonnees;
 
 begin
+  InitVariableRetourMarchand();
   changerTailleConsole(150,50); // Taille console
-  InisialisationVariable(); //Initialise les variables dans les batiments
+  InisialisationVariable(); //Initialise la variable de retour pour les batiements
   InisialisationVariableBat(); //initialisation des Variable de batiments Final
   initRessources(); //Initialise les variable Dans les Ressources
   StartTour(); //Initialisation du nombre de tour a 0
   //MainStart();
-
+  
   MarchandFinal();
   FinalAcheterOuVendre();
 //  setLaines(40);
