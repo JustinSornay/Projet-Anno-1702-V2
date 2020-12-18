@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+        <MainUnitHasScaledStatement Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Test"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="Test.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="gestionerreur.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GestionErreur"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="mainaffichage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MainAffichage"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="fonctionfinal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FonctionFinal"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="image.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Image"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="createbatmaison.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatMaison"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="initialisationprincip.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="initialisationPrincip"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="cadreinfobat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CadreInfoBat"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="createbatsociaux.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatSociaux"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="createbatindustries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatIndustries"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="systemetour.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SystemeTour"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="destructbatmaison.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DestructBatMaison"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="destructbatsociaux.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="destructbatindustries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DestructBatIndustries"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="gestionmarchand.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GestionMarchand"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="marchand.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="achatventemarchand.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AchatVenteMarchand"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="createbatcaserne.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="createbatCaserne"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="createbatmillitaire.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CreateBatMillitaire"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="destrucbatmillitaire.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DestrucBatMillitaire"/>
+      </Unit19>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Test"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Other>
+      <CustomOptions Value="-FcUTF8"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
