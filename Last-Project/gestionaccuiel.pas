@@ -34,6 +34,9 @@ Procedure GestionDialogue();
 //Cette procedure affiche l'écran d'interface
 Procedure InterfaceEcran();
 
+//Cette procedure introduit l'histoire du jeu
+Procedure HistoireIntroduction();
+
 Function getRetourAccueil():boolean;
 Procedure setRetourAccueil(valeur : boolean);
 
@@ -79,7 +82,8 @@ VAR
       CurseurRess.y := CurseurRess.y + 1;
       CurseurRess.x:= CurseurRess.x+11;
       deplacerCurseur(CurseurRess);
-      CreationPseudo(); //procedure de creation de pseudo et de choix de difficulté
+      CreationPseudo(); //procedure de creation de pseudo et de choix de 
+      HistoireIntroduction(); //affiche le menu avec le text d'introduction;   
       InterfaceEcran();//start main menu
 
     END
@@ -269,4 +273,18 @@ end;
     retourAccueil := valeur;
  END;
 
+ //Cette procedure introduit l'histoire du jeu
+ Procedure HistoireIntroduction();
+ VAR CurseurRess : coordonnees; 
+ BEGIN
+  effacerEcran(); 
+  dessinerCadreXY(0,0,148,49, simple, 15, 0); //Cadre large
+  Smallboat(); //affichage du petit bateau
+  castel();  //affichage du chateau
+  SmallSun(); //affichage du sun
+  parchemin(); //affichage du text d'introduction
+  readln();  
+ END;
+
+ 
 end.
